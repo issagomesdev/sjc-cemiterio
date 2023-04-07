@@ -1,0 +1,23 @@
+a.btn.buttons-collection.buttons-colvis.btn-default {
+    display: none;
+}
+
+a.btn.buttons-select-none.btn-primary.disabled {
+    display: none;
+}
+
+a.btn.buttons-select-none.btn-primary {
+    display: none;
+}
+
+a.btn.buttons-select-all.btn-primary {
+    display: none;
+}
+
+td.select-checkbox {
+    display: none;
+}
+
+th.select-checkbox.sorting_disabled {
+    display: none;
+}

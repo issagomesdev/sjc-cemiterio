@@ -1,0 +1,76 @@
+a.btn.buttons-select-all.btn-primary {
+    display: none;
+}
+
+a.btn.buttons-select-none.btn-primary.disabled {
+    display: none;
+}
+
+a.btn.buttons-collection.buttons-colvis.btn-default {
+    display: none;
+}
+
+table.dataTable tbody td.select-checkbox::before, table.dataTable tbody td.select-checkbox::after, table.dataTable tbody th.select-checkbox::before, table.dataTable tbody th.select-checkbox::after {
+    display: none;
+}
+
+td.select-checkbox {
+    pointer-events: none;
+}
+
+@media (max-width: 820px) {
+    .container-fluid {
+        width: 100%;
+        margin: 0;
+        margin-left: -10px;
+        margin-top: 12rem;
+
+      }
+  }
+
+@media (min-width: 821px) and (max-width: 1000px) {
+    .container-fluid {
+        width: 90%;
+        margin: 0;
+        margin-top: 12rem;
+
+      }
+  }
+
+  @media (min-width: 1001px) and (max-width: 1050px) {
+      .container-fluid {
+          width: 95%;
+          margin: 0;
+          margin-top: 12rem;
+
+        }
+    }
+
+  @media (min-width: 1051px) and (max-width: 1359px) {
+      .container-fluid {
+          width: 100%;
+          margin: 0;
+          margin-left: -10px;
+          margin-top: 12rem;
+
+        }
+    }
+
+
+    @media (min-width: 1360px) and (max-width: 1700px) {
+        .container-fluid {
+            width: 100%;
+            margin: 0;
+            margin-top: 12rem;
+
+        }
+  }
+
+  @media (min-width: 1701px) {
+      .container-fluid {
+          width: 98%;
+          margin: 0;
+          margin-top: 12rem;
+
+      }
+}
