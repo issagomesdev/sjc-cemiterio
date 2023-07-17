@@ -36,37 +36,23 @@ class MapaController extends Controller
         return view('admin.mapa.edit', compact('cemiterios', 'cemiterio', 'lotes'));
     }
 
-    public function insert(Request $request)
+    public function update(Request $request)
     {
         abort_if(Gate::denies('lote_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
-        //
-        $data = json_decode($request->data);
-        //
-
+        //dd(json_decode($request->data));
+        $datas = json_decode($request->data);
         $array_lote = [];
 
-        if($data) {
-        //
-        unset($data->mapa_edit->canvas);
+        if($datas) {
 
-        if($data->mapa_edit){
-
-        foreach ($data->mapa_edit as $datas) {
-            if(isset($datas->lote_id)) {
-            $lote = Lote::where('id', $datas->lote_id)->first();
-            $lote->update(['map_lat' => $datas->coords->lat, 'map_long' => $datas->coords->long, ]);
-        }
+        foreach ($datas as $data) {
+            if($data->up == 1) {
+            $lote = Lote::where('id', $data->id)->first();
+            $lote->update(['map_lat' => $data->x, 'map_long' => $data->y ]);
+            array_push($array_lote, $data->id);
+            }
          }
 
-
-        foreach ($data->mapa_edit as $datas) {
-            if($data->mapa_edit){
-            array_push($array_lote, $datas->lote_id);
-            }
-        }
-
-      }
     }
 
     Lote::whereNotIn('id', $array_lote)

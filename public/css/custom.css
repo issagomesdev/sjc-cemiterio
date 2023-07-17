@@ -207,8 +207,7 @@ table.dataTable thead .sorting_desc {
     display: flex;
     -ms-flex-direction: row;
     flex-direction: row;
-    height: 10px;
-    min-height: 0;
+    min-height: auto;
 }
 
 .floatright {
@@ -320,7 +319,6 @@ a.btn.buttons-print.btn-default, a.btn.buttons-collection.buttons-colvis.btn-def
     position: relative;
     top: 0;
     left: 0;
-    height: 100%;
     width: 260px;
     background: #11101d;
     z-index: 100;
@@ -331,7 +329,6 @@ a.btn.buttons-print.btn-default, a.btn.buttons-collection.buttons-colvis.btn-def
     position: relative;
     top: 0;
     left: 0;
-    height: 100%;
     width: 260px;
     background: #11101d;
     z-index: 100;
