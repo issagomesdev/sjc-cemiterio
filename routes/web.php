@@ -123,7 +123,7 @@ Auth::routes(['register' => false]);
     // Map
     Route::get('mapa/{id}', 'MapaController@index')->name('mapa');
     Route::get('mapa/edit/{id}', 'MapaController@edit')->name('mapa.edit');
-    Route::get('mapa', 'MapaController@insert')->name('mapa.insert');
+    Route::post('mapa', 'MapaController@update')->name('mapa.update');
 
     // Global Search
     Route::get('global-search', 'GlobalSearchController@search')->name('globalSearch');
