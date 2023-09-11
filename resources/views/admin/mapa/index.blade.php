@@ -71,23 +71,27 @@
 
   
 <script type="text/javascript">
+    var increment = 1; // auto increment
     const pins = [
         @foreach($lotes as $key => $item)     
         @if($item->map_long && $item->map_lat)
         {
-        "id": "{{$item->id}}",
+        "id": increment++,
+        "lote_id": "{{$item->id}}",
         "name": "{{$item->indentificacao}}",
-        "Identificação":'{{$item->indentificacao}}',
-        "Descrição":'{{$item->descricao}}',
+        "Falecido":'{{ $item->obito->nome_do_falecido ?? 'Não atribuído' }}',
+        "Descricao":'{{$item->descricao}}',
         "Comprimento":'{{$item->comprimento}}',
         "Altura":'{{$item->altura}}',
         "Lote_vazio":'{{$item->lote_vazio}}',
         "Reservado":'{{$item->reservado}}',
-        "Cemitério":'{{$item->cemiterio->nome}}',
+        "Cemiterio":'{{$item->cemiterio->nome}}',
         "Setor":'{{$item->setor->indentificacao}}',
         "Quadra":'{{$item->quadra->indentificacao}}',
+        "url": '{{ route('admin.lotes.show', $item->id) }}',
         "x": "{{$item->map_lat}}",
-        "y": "{{$item->map_long}}"
+        "y": "{{$item->map_long}}",
+        "up": 1,
       },
       @endif
       @endforeach      

@@ -31,8 +31,7 @@ class MapaController extends Controller
 
         $cemiterios = Cemiterio::with(['assinatura'])->get();
         $cemiterio = Cemiterio::with(['assinatura'])->where('id', $id)->first();
-        $lotes = Lote::with(['cemiterio', 'setor', 'quadra', 'assinatura'])->where('cemiterio_id', $cemiterio->id)->get();
-
+        $lotes = Lote::with(['cemiterio', 'obito', 'setor', 'quadra', 'assinatura'])->where('cemiterio_id', $cemiterio->id)->get();
         return view('admin.mapa.edit', compact('cemiterios', 'cemiterio', 'lotes'));
     }
 
@@ -47,9 +46,9 @@ class MapaController extends Controller
 
         foreach ($datas as $data) {
             if($data->up == 1) {
-            $lote = Lote::where('id', $data->id)->first();
+            $lote = Lote::where('id', $data->lote_id)->first();
             $lote->update(['map_lat' => $data->x, 'map_long' => $data->y ]);
-            array_push($array_lote, $data->id);
+            array_push($array_lote, $data->lote_id);
             }
          }
 

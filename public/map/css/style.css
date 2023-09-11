@@ -66,7 +66,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 2%;
+  width: 3%;
   height: 5%;
 }
 
@@ -81,6 +81,7 @@ body {
   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite
     both;
 }
+
 
 @-webkit-keyframes scale-up-center {
   0% {
@@ -272,6 +273,8 @@ body {
   width: 100%;
   top: 0;
   position: absolute;
+  background-color: transparent;
+  opacity: 1 !important;
 }
 
 .close:hover, .close:focus {
@@ -285,9 +288,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: red;
-  height: 20px;
-  width: 20px;
+  background-color: #ea5959;
+  height: 1.3em;
+  width: 2em;
   margin: 5px;
   border-radius: 2px;
   cursor: pointer;
@@ -309,7 +312,8 @@ body {
   border-radius: 0.2rem;
   background-color: rgb(247 244 244);
   border: none;
-  width: 90%;
+  width: 30%;
+  margin: 5px;
   transition: all 0.3s;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
@@ -355,6 +359,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 0 30px;
 }
 
 .search.input {
@@ -375,12 +380,19 @@ input:focus-visible {
   width: 90%;
 }
 
+.list-pins::-webkit-scrollbar {
+  width: 0;
+}
+
 .pin-in-list {
-  border-bottom: 2px #464646 inset;
+  position: relative;
   font-family: "Figtree", sans-serif;
   display: flex;
-  height: 100px;
   margin-top: 10px;
+}
+
+.item {
+  width: 100%;
 }
 
 .name {
@@ -393,12 +405,69 @@ input:focus-visible {
   font-size: 25px;
   margin: 5px;
   white-space: nowrap;
+  font-weight: 600;
 }
 
 .infos {
   display: flex;
+  margin: 20px 0;
+  width: 100%;
 }
 
 .infos p {
-  margin-left: 10px;
+  margin-left: 6px;
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+  display: flex;
+  width: 100%;
+}
+
+.data-about {
+  width: 100%;
+  font-weight: 600;
+}
+
+.data-container{
+  width: 100%;
+  min-height: 11em;
+  position: relative;
+  display: none;
+}
+
+.data-content {
+  width: 100%;
+  right: 0;
+  position: absolute;
+  background-color: #f7f4f4;
+  z-index: 9;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.data-content .data {
+  padding: 15px 20px;
+}
+
+.status {
+  display: flex;
+}
+
+.status p {
+  width: auto;
+}
+
+.name a {
+  bottom: 5px;
+  position: relative;
+}
+
+.name a i {
+  color: #464646
+}
+
+.name a:hover i {
+  color: #7464ff;
+}
+
+#about {
+  cursor: pointer;
 }

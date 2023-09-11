@@ -77,6 +77,11 @@ class Lote extends Model
         return $this->belongsTo(User::class, 'assinatura_id');
     }
 
+    public function obito()
+    {
+        return $this->hasOne(Obito::class, 'lote_id');
+    }
+
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');

@@ -97,12 +97,12 @@ class EntreLotesController extends Controller
         $cemiterio = Cemiterio::where('id', $request->cemiterio_id)->first();
         $setor = Setore::where('id', $request->setor_id)->first();
         $quadra = Quadra::where('id', $request->quadra_id)->first();
-        $lote = Quadra::where('id', $request->lote_id)->first();
+        $lote = Lote::where('id', $request->lote_id)->first();
 
         $cemiterio_destino = Cemiterio::where('id', $request->cemiterio_destino_id)->first();
         $setor_destino = Setore::where('id', $request->setor_destino_id)->first();
         $quadra_destino = Quadra::where('id', $request->quadra_destino_id)->first();
-        $lote_destino = Quadra::where('id', $request->lote_destino_id)->first();
+        $lote_destino = Lote::where('id', $request->lote_destino_id)->first();
 
         $audit = AuditLog::create([
           'ação' => 'Cadastro',
