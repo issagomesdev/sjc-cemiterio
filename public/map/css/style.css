@@ -66,11 +66,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-<<<<<<< HEAD
   width: 3%;
-=======
-  width: 2%;
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
   height: 5%;
 }
 
@@ -86,10 +82,6 @@ body {
     both;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
 @-webkit-keyframes scale-up-center {
   0% {
     -webkit-transform: scale(0.5);
@@ -280,11 +272,8 @@ body {
   width: 100%;
   top: 0;
   position: absolute;
-<<<<<<< HEAD
   background-color: transparent;
   opacity: 1 !important;
-=======
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
 }
 
 .close:hover, .close:focus {
@@ -298,15 +287,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
   background-color: #ea5959;
   height: 1.3em;
   width: 2em;
-=======
-  background-color: red;
-  height: 20px;
-  width: 20px;
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
   margin: 5px;
   border-radius: 2px;
   cursor: pointer;
@@ -328,12 +311,8 @@ body {
   border-radius: 0.2rem;
   background-color: rgb(247 244 244);
   border: none;
-<<<<<<< HEAD
   width: 30%;
   margin: 5px;
-=======
-  width: 90%;
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
   transition: all 0.3s;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
@@ -379,10 +358,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-<<<<<<< HEAD
   padding: 0 30px;
-=======
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
 }
 
 .search.input {
@@ -403,7 +379,6 @@ input:focus-visible {
   width: 90%;
 }
 
-<<<<<<< HEAD
 .list-pins::-webkit-scrollbar {
   width: 0;
 }
@@ -419,16 +394,6 @@ input:focus-visible {
   width: 100%;
 }
 
-=======
-.pin-in-list {
-  border-bottom: 2px #464646 inset;
-  font-family: "Figtree", sans-serif;
-  display: flex;
-  height: 100px;
-  margin-top: 10px;
-}
-
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
 .name {
   display: flex;
   align-items: baseline;
@@ -439,15 +404,11 @@ input:focus-visible {
   font-size: 25px;
   margin: 5px;
   white-space: nowrap;
-<<<<<<< HEAD
   font-weight: 600;
-=======
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
 }
 
 .infos {
   display: flex;
-<<<<<<< HEAD
   margin: 20px 0;
   width: 100%;
 }
@@ -508,10 +469,4 @@ input:focus-visible {
 
 #about {
   cursor: pointer;
-=======
-}
-
-.infos p {
-  margin-left: 10px;
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
 }

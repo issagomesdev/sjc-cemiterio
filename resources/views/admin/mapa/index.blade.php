@@ -71,31 +71,20 @@
 
   
 <script type="text/javascript">
-<<<<<<< HEAD
     var increment = 1; // auto increment
-=======
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
     const pins = [
         @foreach($lotes as $key => $item)     
         @if($item->map_long && $item->map_lat)
         {
-<<<<<<< HEAD
         "id": increment++,
         "lote_id": "{{$item->id}}",
         "name": "{{$item->indentificacao}}",
         "Falecido":'{{ $item->obito->nome_do_falecido ?? 'Não atribuído' }}',
         "Descricao":'{{$item->descricao}}',
-=======
-        "id": "{{$item->id}}",
-        "name": "{{$item->indentificacao}}",
-        "Identificação":'{{$item->indentificacao}}',
-        "Descrição":'{{$item->descricao}}',
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
         "Comprimento":'{{$item->comprimento}}',
         "Altura":'{{$item->altura}}',
         "Lote_vazio":'{{$item->lote_vazio}}',
         "Reservado":'{{$item->reservado}}',
-<<<<<<< HEAD
         "Cemiterio":'{{$item->cemiterio->nome}}',
         "Setor":'{{$item->setor->indentificacao}}',
         "Quadra":'{{$item->quadra->indentificacao}}',
@@ -103,13 +92,6 @@
         "x": "{{$item->map_lat}}",
         "y": "{{$item->map_long}}",
         "up": 1,
-=======
-        "Cemitério":'{{$item->cemiterio->nome}}',
-        "Setor":'{{$item->setor->indentificacao}}',
-        "Quadra":'{{$item->quadra->indentificacao}}',
-        "x": "{{$item->map_lat}}",
-        "y": "{{$item->map_long}}"
->>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
       },
       @endif
       @endforeach      
