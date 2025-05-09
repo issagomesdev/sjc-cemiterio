@@ -72,6 +72,9 @@ cp .env.example .env
 # Generate the app key
 php artisan key:generate
 
+# Import the database
+# Go to the "database/bd" folder and import the "cemiterioBD.sql" file into your database.
+
 # Configure your .env variables
 
 # Link storage
