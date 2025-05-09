@@ -207,6 +207,10 @@ table.dataTable thead .sorting_desc {
     display: flex;
     -ms-flex-direction: row;
     flex-direction: row;
+<<<<<<< HEAD
+=======
+    min-height: auto;
+>>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
 }
 
 .floatright {

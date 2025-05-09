@@ -46,9 +46,15 @@ class MapaController extends Controller
 
         foreach ($datas as $data) {
             if($data->up == 1) {
+<<<<<<< HEAD
             $lote = Lote::where('id', $data->lote_id)->first();
             $lote->update(['map_lat' => $data->x, 'map_long' => $data->y ]);
             array_push($array_lote, $data->lote_id);
+=======
+            $lote = Lote::where('id', $data->id)->first();
+            $lote->update(['map_lat' => $data->x, 'map_long' => $data->y ]);
+            array_push($array_lote, $data->id);
+>>>>>>> 2a3843f3ffdb47ded4f570ddeb385b367205c702
             }
          }
 
