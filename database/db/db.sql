@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 31-Ago-2022 às 04:04
--- Versão do servidor: 8.0.27
--- versão do PHP: 8.0.13
+-- Tempo de geração: 03-Out-2023 às 20:27
+-- Versão do servidor: 8.0.31
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `sjccemiterio`
+-- Banco de dados: `cemiterio`
 --
 
 -- --------------------------------------------------------
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `audit_logs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=185 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=188 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `audit_logs`
@@ -195,7 +195,10 @@ INSERT INTO `audit_logs` (`id`, `ação`, `autor`, `local`, `registro`, `descri�
 (181, 'Edição', 1, 'Lotes', '#3 - 02', 'ID: 3 | Cemitério: Cemitério Memorial Vale da Saudade | Setor: Lado B | Quadra: 01 | Tipo de Lote: Capela | Comprimento:  | Altura:  | Indentificação: 02 | Descrição:  | Lote Vazio? Sim | Reservado? Sim', '127.0.0.1', '2022-08-27 06:59:05', '2022-08-27 06:59:05'),
 (182, 'Edição', 1, 'Lotes', '#3 - 02', 'ID: 3 | Cemitério: Cemitério Morada da Paz | Setor: Lado AB | Quadra: 03 | Tipo de Lote: Capela | Comprimento:  | Altura:  | Indentificação: 02 | Descrição:  | Lote Vazio? Sim | Reservado? Sim', '127.0.0.1', '2022-08-27 07:03:53', '2022-08-27 07:03:53'),
 (183, 'Cadastro', 1, 'Lotes', '#4 - lote 04', 'ID: 4 | Cemitério: Cemitério Memorial Vale da Saudade | Setor: Lado B | Quadra: 01 | Tipo de Lote: Capela | Comprimento: 34 | Altura: 32 | Indentificação: lote 04 | Descrição: test | Lote Vazio? Sim | Reservado? Não', '127.0.0.1', '2022-08-29 03:58:19', '2022-08-29 03:58:19'),
-(184, 'Exclusão', 1, 'Lotes', '#4 - lote 04', 'ID: 4 | Cemitério: Cemitério Memorial Vale da Saudade | Setor: Lado B | Quadra: 01 | Tipo de Lote: Capela | Comprimento: 34 | Altura: 32 | Indentificação: lote 04 | Descrição: test | Lote Vazio? Sim | Reservado? Não', '127.0.0.1', '2022-08-29 04:36:25', '2022-08-29 04:36:25');
+(184, 'Exclusão', 1, 'Lotes', '#4 - lote 04', 'ID: 4 | Cemitério: Cemitério Memorial Vale da Saudade | Setor: Lado B | Quadra: 01 | Tipo de Lote: Capela | Comprimento: 34 | Altura: 32 | Indentificação: lote 04 | Descrição: test | Lote Vazio? Sim | Reservado? Não', '127.0.0.1', '2022-08-29 04:36:25', '2022-08-29 04:36:25'),
+(185, 'Cadastro', 1, 'Transf. entre lotes', '#26 - Ryan Diego Felipe Alves', 'ID: 26 | Falecido: Ryan Diego Felipe Alves | Tipo de Destino: Interno | Remetente: Cemitério Memorial Vale da Saudade - Lado B - 01 - 02 | Destino: Cemitério Morada da Paz - Lado AB - 03 - 02 | Data de Transferencia: 23/07/2023 | Observações: ', '127.0.0.1', '2023-07-24 02:53:48', '2023-07-24 02:53:48'),
+(186, 'Cadastro', 1, 'Transf. entre lotes', '#35 - Sara Heloise Renata Caldeira', 'ID: 35 | Falecido: Sara Heloise Renata Caldeira | Tipo de Destino: Interno | Remetente: Cemitério Memorial Vale da Saudade - Lado AB - 02 - lote 03 | Destino: Cemitério Morada da Paz - Lado AB - 03 - lote 03 | Data de Transferencia:  | Observações: ', '127.0.0.1', '2023-07-24 03:04:54', '2023-07-24 03:04:54'),
+(187, 'Cadastro', 1, 'Transf. entre lotes', '#36 - Ryan Diego Felipe Alves', 'ID: 36 | Falecido: Ryan Diego Felipe Alves | Tipo de Destino: Interno | Remetente: Cemitério Morada da Paz - Lado AB - 03 - lote 03 | Destino: Cemitério Morada da Paz - Lado AB - 03 - lote 09 | Data de Transferencia:  | Observações: ', '127.0.0.1', '2023-07-24 03:06:31', '2023-07-24 03:06:31');
 
 -- --------------------------------------------------------
 
@@ -352,7 +355,7 @@ CREATE TABLE IF NOT EXISTS `entre_lotes` (
   KEY `quadra_destino_fk_6192181` (`quadra_destino_id`),
   KEY `lote_destino_fk_6192182` (`lote_destino_id`),
   KEY `assinatura_fk_6192185` (`assinatura_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `entre_lotes`
@@ -360,7 +363,18 @@ CREATE TABLE IF NOT EXISTS `entre_lotes` (
 
 INSERT INTO `entre_lotes` (`id`, `responsavel_id`, `responsavel_nome`, `falecido_id`, `falecido_nome`, `cemiterio_id`, `setor_id`, `quadra_id`, `lote_id`, `tipo_de_destino`, `destino`, `cemiterio_destino_id`, `setor_destino_id`, `lote_destino_id`, `quadra_destino_id`, `data_de_transferencia`, `observacoes`, `assinatura_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (19, 1, 'Eliane Juliana Ana Silveira', 12, 'Ryan Diego Felipe Alves', 1, 5, 1, 2, 'Externo', 'Cemiterio no exterior', NULL, NULL, NULL, NULL, '2022-04-06', NULL, 1, '2022-04-06 22:58:58', '2022-04-06 22:58:58', NULL),
-(18, 1, 'Eliane Juliana Ana Silveira', 12, 'Ryan Diego Felipe Alves', 1, 5, 1, 2, 'Interno', NULL, 2, 5, 2, 1, '2022-04-06', NULL, 1, '2022-04-06 22:58:11', '2022-04-06 22:58:11', NULL);
+(18, 1, 'Eliane Juliana Ana Silveira', 12, 'Ryan Diego Felipe Alves', 1, 5, 1, 2, 'Interno', NULL, 2, 5, 2, 1, '2022-04-06', NULL, 1, '2022-04-06 22:58:11', '2022-04-06 22:58:11', NULL),
+(26, 1, 'Eliane Juliana Ana Silveira', 12, 'Ryan Diego Felipe Alves', 2, 5, 1, 2, 'Interno', NULL, 6, 3, 2, 4, '2023-07-23', NULL, 1, '2023-07-24 02:53:48', '2023-07-24 02:53:48', NULL),
+(27, 1, 'Eliane Juliana Ana Silveira', 2, 'Sara Heloise Renata Caldeira', 2, 3, 2, 2, 'Interno', NULL, 6, 3, 3, 4, NULL, NULL, 1, '2023-07-24 02:54:25', '2023-07-24 02:54:25', NULL),
+(28, 1, 'Eliane Juliana Ana Silveira', 2, 'Sara Heloise Renata Caldeira', 2, 3, 2, 2, 'Interno', NULL, 6, 3, 3, 4, '2023-07-23', NULL, 1, '2023-07-24 02:54:34', '2023-07-24 02:54:34', NULL),
+(29, 1, 'Eliane Juliana Ana Silveira', 2, 'Sara Heloise Renata Caldeira', 2, 3, 2, 2, 'Interno', NULL, 6, 3, 3, 4, '2023-07-23', NULL, 1, '2023-07-24 02:57:08', '2023-07-24 02:57:08', NULL),
+(30, 1, 'Eliane Juliana Ana Silveira', 2, 'Sara Heloise Renata Caldeira', 2, 3, 2, 2, 'Interno', NULL, 6, 3, 3, 4, '2023-07-23', NULL, 1, '2023-07-24 02:57:57', '2023-07-24 02:57:57', NULL),
+(31, 1, 'Eliane Juliana Ana Silveira', 2, 'Sara Heloise Renata Caldeira', 2, 3, 2, 2, 'Interno', NULL, 6, 3, 3, 4, '2023-07-23', NULL, 1, '2023-07-24 03:00:59', '2023-07-24 03:00:59', NULL),
+(32, 1, 'Eliane Juliana Ana Silveira', 2, 'Sara Heloise Renata Caldeira', 2, 3, 2, 2, 'Interno', NULL, 6, 3, 3, 4, '2023-07-23', NULL, 1, '2023-07-24 03:01:46', '2023-07-24 03:01:46', NULL),
+(33, 1, 'Eliane Juliana Ana Silveira', 2, 'Sara Heloise Renata Caldeira', 2, 3, 2, 2, 'Interno', NULL, 6, 3, 3, 4, '2023-07-23', NULL, 1, '2023-07-24 03:02:03', '2023-07-24 03:02:03', NULL),
+(34, 1, 'Eliane Juliana Ana Silveira', 2, 'Sara Heloise Renata Caldeira', 2, 3, 2, 2, 'Interno', NULL, 6, 3, 3, 4, '2023-07-23', NULL, 1, '2023-07-24 03:03:40', '2023-07-24 03:03:40', NULL),
+(35, 1, 'Eliane Juliana Ana Silveira', 2, 'Sara Heloise Renata Caldeira', 2, 3, 2, 2, 'Interno', NULL, 6, 3, 2, 4, NULL, NULL, 1, '2023-07-24 03:04:54', '2023-07-24 03:04:54', NULL),
+(36, 1, 'Eliane Juliana Ana Silveira', 12, 'Ryan Diego Felipe Alves', 6, 3, 4, 2, 'Interno', NULL, 6, 3, 3, 4, NULL, NULL, 1, '2023-07-24 03:06:31', '2023-07-24 03:06:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -432,10 +446,10 @@ CREATE TABLE IF NOT EXISTS `lotes` (
 --
 
 INSERT INTO `lotes` (`id`, `tipo_de_lote`, `comprimento`, `altura`, `indentificacao`, `descricao`, `lote_vazio`, `reservado`, `map_lat`, `map_long`, `cemiterio_id`, `setor_id`, `quadra_id`, `created_at`, `updated_at`, `deleted_at`, `assinatura_id`) VALUES
-(1, 'Capela', '30', '20', 'lote 02', 'Lorem ipsum convallis lorem aliquam tempor placerat interdum dapibus donec elementum, sapien egestas lobortis tellus mattis velit commodo sem lobortis. ', 'Sim', 'Sim', '179.066', '307.5', 6, 1, 2, '2022-03-17 00:32:29', '2022-08-30 23:11:37', NULL, 1),
-(2, 'Estaca', '33', '19', 'lote 03', 'Lorem ipsum sodales tellus vestibulum habitasse, ipsum cras varius ut nibh, lectus aptent mollis a. ', 'Sim', 'Sim', '196.066', '326.5', 6, 3, 4, '2022-03-17 00:34:19', '2022-08-30 23:11:37', NULL, 1),
-(3, 'Capela', '34', NULL, 'lote 09', '	Lorem ipsum conubia posuere fringilla cras, magna placerat senectus tortor. ', 'Sim', 'Sim', '213.066', '342.5', 6, 3, 4, '2022-08-27 06:58:49', '2022-08-30 23:11:37', NULL, 1),
-(4, 'Capela', '34', '32', 'lote 04', 'Lorem ipsum porttitor, sed', 'Sim', 'Não', '780.066', '67.5', 2, 5, 1, '2022-08-29 03:58:19', '2022-08-29 08:42:26', NULL, 1);
+(1, 'Capela', '30', '20', 'lote 02', 'Lorem ipsum convallis lorem aliquam tempor placerat interdum dapibus donec elementum, sapien egestas lobortis tellus mattis velit commodo sem lobortis. ', 'Sim', 'Sim', '69.33', '38.12', 6, 1, 2, '2022-03-17 00:32:29', '2023-09-09 18:55:05', NULL, 1),
+(2, 'Estaca', '33', '19', 'lote 03', 'Lorem ipsum sodales tellus vestibulum habitasse, ipsum cras varius ut nibh, lectus aptent mollis a. ', 'Sim', 'Sim', '69.16', '33.02', 6, 3, 4, '2022-03-17 00:34:19', '2023-09-09 18:55:05', NULL, 1),
+(3, 'Capela', '34', NULL, 'lote 09', '	Lorem ipsum conubia posuere fringilla cras, magna placerat senectus tortor. ', 'Sim', 'Sim', '92.01', '40.81', 6, 3, 4, '2022-08-27 06:58:49', '2023-09-09 18:55:05', NULL, 1),
+(4, 'Capela', '34', '32', 'lote 04', 'Lorem ipsum porttitor, sed', 'Sim', 'Não', '46.39', '31.54', 2, 5, 1, '2022-08-29 03:58:19', '2023-07-14 22:56:36', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -599,8 +613,8 @@ CREATE TABLE IF NOT EXISTS `obitos` (
 --
 
 INSERT INTO `obitos` (`id`, `numero_dam`, `ano_dam`, `nome_do_falecido`, `data_de_nascimento`, `data_de_falecimento`, `data_de_sepultamento`, `nome_da_mae`, `nome_do_pai`, `sexo`, `cor_raca`, `certidao_de_obito`, `causa_da_morte`, `naturalidade`, `estado`, `cidade`, `bairro`, `rua`, `numero`, `observacoes`, `situacao`, `gratuito`, `created_at`, `updated_at`, `deleted_at`, `responsavel_id`, `cemiterio_id`, `setor_id`, `quadra_id`, `lote_id`, `assinatura_id`) VALUES
-(2, '4235323t45', 'dr45t5y532', 'Sara Heloise Renata Caldeira', '1959-01-06', '2022-03-07', '2022-03-14', 'Olivia Emanuelly', 'César Iago Caldeira', 'Feminino', 'Negro/a', '32434557890754323frt567', 'Infarto', 'Brasileiro', 'PE', 'Recife', 'Linha do Tiro', '1ª Travessa Alterosa', '312', 'ww', 'Ativo', 'Sim', '2022-03-17 02:38:56', '2022-03-29 10:05:18', NULL, 1, 2, 3, 2, 2, 1),
-(12, '7543213457', '2009', 'Ryan Diego Felipe Alves', '1956-02-20', '2018-07-13', '2019-01-09', 'Marlene Giovana', 'Benjamin Ricardo Vicente Alves', 'Masculino', 'Pardo/a', '5890338901', 'Acidente', 'Brasileiro', 'PE', 'Recife', 'Linha do Tiro', 'Alameda das Orquídeas', '21', 'test', 'Ativo', 'Sim', '2022-04-02 09:07:20', '2022-04-06 23:03:08', NULL, 1, 2, 5, 1, 2, 1);
+(2, '4235323t45', 'dr45t5y532', 'Sara Heloise Renata Caldeira', '1959-01-06', '2022-03-07', '2022-03-14', 'Olivia Emanuelly', 'César Iago Caldeira', 'Feminino', 'Negro/a', '32434557890754323frt567', 'Infarto', 'Brasileiro', 'PE', 'Recife', 'Linha do Tiro', '1ª Travessa Alterosa', '312', 'ww', 'Ativo', 'Sim', '2022-03-17 02:38:56', '2023-07-24 03:04:54', NULL, 1, 6, 3, 4, 2, 1),
+(12, '7543213457', '2009', 'Ryan Diego Felipe Alves', '1956-02-20', '2018-07-13', '2019-01-09', 'Marlene Giovana', 'Benjamin Ricardo Vicente Alves', 'Masculino', 'Pardo/a', '5890338901', 'Acidente', 'Brasileiro', 'PE', 'Recife', 'Linha do Tiro', 'Alameda das Orquídeas', '21', 'test', 'Ativo', 'Sim', '2022-04-02 09:07:20', '2023-07-24 03:06:31', NULL, 1, 6, 3, 4, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -1651,8 +1665,8 @@ CREATE TABLE IF NOT EXISTS `setores` (
 
 INSERT INTO `setores` (`id`, `indentificacao`, `descricao`, `created_at`, `updated_at`, `deleted_at`, `cemiterio_id`, `assinatura_id`) VALUES
 (1, 'Lado AC', '5445', '2022-03-16 00:31:31', '2022-03-16 00:34:46', NULL, 1, 1),
-(2, 'Lado B', NULL, '2022-03-16 00:32:33', '2022-03-16 00:33:08', NULL, 1, 1),
-(3, 'Lado AB', NULL, '2022-03-16 00:39:34', '2022-03-16 00:52:46', NULL, 6, 1),
+(2, 'Lado B', 'gvf', '2022-03-16 00:32:33', '2022-03-16 00:33:08', NULL, 1, 1),
+(3, 'Lado AB', 'vfdv', '2022-03-16 00:39:34', '2022-03-16 00:52:46', NULL, 6, 1),
 (5, 'Lado B', 'Lado B do Cemiterio', '2022-03-16 00:46:20', '2022-03-16 01:12:37', NULL, 2, 1);
 
 -- --------------------------------------------------------
@@ -1683,7 +1697,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`, `assinatura_id`) VALUES
-(1, 'Admin', 'admin@admin.com', NULL, '$2y$10$5czWN/OqGAeImfp1U0jOguw3eM0XenpIOH0p/EotqRjFUQLAPdQKu', 'vf1dzrrRPpw8BYJmZwlLviSJcGT4YbwQ5eVrTJnMRwCcEw0JmQ9dbpYzvv3I', '2022-03-12 23:01:53', '2022-03-20 05:31:44', NULL, 1),
+(1, 'Admin', 'admin@admin.com', NULL, '$2y$10$5czWN/OqGAeImfp1U0jOguw3eM0XenpIOH0p/EotqRjFUQLAPdQKu', 'awQDfw1AJC4J7tLpxRCbN9jC31ZR98ZGV7fNQ8pIMnpwc8m0L8QvM7JdF4Zn', '2022-03-12 23:01:53', '2022-03-20 05:31:44', NULL, 1),
 (2, 'sjcsistemas', 'admin@sjcsistemas.com', NULL, '$2y$10$wQG1Ggys7M/pVgRB3L3douT5ihWPsYa24CWN2h2t/BRvgRXnm.dlu', 'BMKNyn7ca6S5vq5tOIgtsEeZDIbrtpYdxOivp9SzlviodJdUJi3XWOdRfzb4', '2022-03-13 02:47:33', '2022-03-13 02:58:15', NULL, 1),
 (10, 'Hayssa Maria Gomes da Silva', 'hayssagomes2002@gmail.com', NULL, '$2y$10$hkAdlM9hVxGfONdFVopx1eat17p6Xi/EvMvw288eZibX5kbkT8KGq', NULL, '2022-04-11 21:25:33', '2022-04-11 21:25:33', NULL, 2);
 COMMIT;
