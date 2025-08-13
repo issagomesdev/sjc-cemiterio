@@ -3,11 +3,11 @@
 [HTML5__BADGE]: https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
 [CSS3__BADGE]: https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white
 [PROJECT__BADGE]: https://img.shields.io/badge/📱Visit_this_project-000?style=for-the-badge&logo=project
-[PROJECT__URL]: https://sjccemiterio.byissa.tech
+[PROJECT__URL]: https://sjccemiterio.byissa.dev
 
 <h1 align="center" style="font-weight: bold;">🌐 SJC Cemitério — Cemetery Manager</h1>
 
-![Preview do site](https://sjccemiterio.byissa.tech/site/images/preview.png)
+![Preview do site](https://sjccemiterio.byissa.dev/site/images/preview.png)
 
 ![Laravel][LARAVEL__BADGE] ![JavaScript][JAVASCRIPT__BADGE] ![HTML5][HTML5__BADGE] ![CSS3][CSS3__BADGE]
 
