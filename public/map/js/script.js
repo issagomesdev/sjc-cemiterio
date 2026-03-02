@@ -360,7 +360,7 @@ function editMode(){
         pX.setAttribute('data-x', x);
         pY.innerHTML = `y: ${y}`;
         pY.setAttribute('data-y', y);
-        const pin = pins.find((pin) => pin.id === id);
+        const pin = pins.find((pin) => pin.id == id);
         pin.x = x;
         pin.y = y;
       }
@@ -423,7 +423,6 @@ function editMode(){
       bttn.addEventListener("click", () => {
         const deselected = document.querySelector(".pin.selected");
         const selected = document.querySelector(`[data-id="${pin.id}"]`);
-        console.log(selected, pin)
         if (deselected) {
           deselected.classList.remove("selected");
           deselected.classList.remove("locate");
@@ -520,12 +519,13 @@ function editMode(){
       chooseName.appendChild(selectOption)
       const unallocateds = pinsUnallocated.map(function(unallocated) {
         unallocatedOption = document.createElement("option");
-        unallocatedOption.value = unallocated.id;
+        unallocatedOption.value = unallocated.lote_id;
         unallocatedOption.innerHTML = unallocated.name;
 
         return unallocatedOption
 
       })
+
       chooseName.append(...unallocateds) 
       const editButton = document.createElement("button");
       editButton.innerHTML = '<i class="fa-solid fa-check"></i>';
@@ -534,15 +534,16 @@ function editMode(){
 
       editButton.addEventListener("click", () => {
         if (chooseName.value) {
-          const unallocated = pinsUnallocated.find((pin) => pin.id === chooseName.value);
-          const allocated = pins.find((pin) => pin.id === id);
+          const unallocated = pinsUnallocated.find((pin) => pin.lote_id == chooseName.value);
+          const allocated = pins.find((pin) => pin.id == id);
+          console.log(unallocated, allocated, id)
           unallocated.x = allocated.x, unallocated.y = allocated.y
           allocated.x = null, allocated.y = null
           if(allocated.up == 1) pinsUnallocated.push(allocated);
           pins.push(unallocated);
-          const removeUnallocated = pinsUnallocated.findIndex((pin) => pin.id === chooseName.value);
+          const removeUnallocated = pinsUnallocated.findIndex((pin) => pin.id == chooseName.value);
           pinsUnallocated.splice(removeUnallocated, 1);
-          const removeAllocated = pins.findIndex((pin) => pin.id === id);
+          const removeAllocated = pins.findIndex((pin) => pin.id == id);
           pins.splice(removeAllocated, 1);      
           const pinElement = document.querySelectorAll(`[data-id="${id}"]`);
           pinElement.forEach((element) => {
@@ -587,15 +588,14 @@ function editMode(){
         element.remove();
       });
 
-      const allocated = pins.find((pin) => pin.id === id);
+      const allocated = pins.find((pin) => pin.id == id);
       if(allocated.up == 1){
         allocated.x = null
         allocated.y = null
         pinsUnallocated.push(allocated)
       }
-      const index = pins.findIndex((pin) => pin.id === id);
+      const index = pins.findIndex((pin) => pin.id == id);
       pins.splice(index, 1);
-      console.log(pinsUnallocated, pins)
       
     } // function responsible to delete items in array and html
 
@@ -647,7 +647,7 @@ function editMode(){
           const pX = infosClass.querySelector("p[data-x]");
           pX.innerHTML = `x: ${x}`;
           pX.setAttribute('data-x', x);
-          const pin = pins.find((pin) => pin.id === id);
+          const pin = pins.find((pin) => pin.id == id);
           pin.x = x;
         }
       } else {
@@ -670,7 +670,7 @@ function editMode(){
           const pY = infosClass.querySelector("p[data-y]");
           pY.innerHTML = `y: ${y}`;
           pY.setAttribute('data-y', y);
-          const pin = pins.find((pin) => pin.id === id);
+          const pin = pins.find((pin) => pin.id == id);
           pin.y = y;
         }
       } else {
@@ -693,7 +693,7 @@ function editMode(){
           const pY = infosClass.querySelector("p[data-y]");
           pY.innerHTML = `y: ${y}`;
           pY.setAttribute('data-y', y);
-          const pin = pins.find((pin) => pin.id === id);
+          const pin = pins.find((pin) => pin.id == id);
           pin.y = y;
         }
       } else {
@@ -705,7 +705,6 @@ function editMode(){
       const selected = document.querySelector(".pin.selected");
       if (selected) {
         const current = parseFloat(selected.style.left, 10) || 0;
-        console.log(current)
         if (current <= 97) {
           rightItem.style = "color: #3c4b64;";
           const x = `${current + 0.5}`;
@@ -717,7 +716,7 @@ function editMode(){
           const pX = infosClass.querySelector("p[data-x]");
           pX.innerHTML = `x: ${x}`;
           pX.setAttribute('data-x', x);
-          const pin = pins.find((pin) => pin.id === id);
+          const pin = pins.find((pin) => pin.id == id);
           pin.x = x;
         }
       } else {
