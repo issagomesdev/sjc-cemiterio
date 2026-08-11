@@ -7,7 +7,7 @@
 
 <h1 align="center" style="font-weight: bold;">🌐 SJC Cemitério — Cemetery Manager</h1>
 
-![Preview do site](https://sjccemiterio.byissa.dev/site/images/preview.png)
+![Preview do site](https://media.byissa.dev/sjcc/preview.webp)
 
 ![Laravel][LARAVEL__BADGE] ![JavaScript][JAVASCRIPT__BADGE] ![HTML5][HTML5__BADGE] ![CSS3][CSS3__BADGE]
 
